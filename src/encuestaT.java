@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 
 class interfaz extends JFrame {
 	GridBagLayout gbl = new GridBagLayout();
@@ -16,10 +17,27 @@ class interfaz extends JFrame {
 		setVisible(true);
 
 		bttnMostrar = new JButton("Mostrar datos encuestas");
+		bttnMostrar.setPreferredSize(new Dimension(250,100));
 		agregarComp(bttnMostrar, 0, 1, 1, 1);
-
+		
+		JPanel resSi = new JPanel();
+		resSi.setBorder(new TitledBorder("Resultados encuesta si"));
+		agregarComp(resSi, 1, 1, 1, 1);
 		txtSi = new JTextField();
-
+		txtSi.setPreferredSize(new Dimension(350,200));
+		txtSi.setEditable(false);
+		resSi.add(txtSi);
+		//agregarComp(txtSi, 1, 1, 1, 1);
+		
+		JPanel resNo = new JPanel();
+		resNo.setBorder(new TitledBorder("Resultados encuesta no"));
+		agregarComp(resNo, 2, 1, 1, 1);
+		txtNo = new JTextField();
+		txtNo.setPreferredSize(new Dimension(350,200));
+		txtNo.setEditable(false);
+		resNo.add(txtNo);
+		
+		
 		pack();
 		setLocationRelativeTo(null);
 	}
